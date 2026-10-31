@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>3D Haydash - Mercedes va Porsche bilan poyga o'yini</title>
+<meta name="description" content="Bepul 3D haydash o'yini: Mercedes-AMG C 63 DTM va Porsche 992 GT3 R bilan shaharda hayda, drift qil, yomg'irda sirpana, kun va tun almashinuvini kujat. Mobil va kompyuter uchun.">
+<meta name="theme-color" content="#0a0a0d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="3D Haydash - Mercedes va Porsche bilan Spa-Francorchamps poyga o'yini">
+<meta property="og:description" content="Bepul 3D haydash: drift, yomg'ir, kun-tun sikli, missiyalar. Mercedes va Porsche bilan.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230a0a0d%22/%3E%3Ccircle cx=%2232%22 cy=%2226%22 r=%2214%22 fill=%22none%22 stroke=%22%23ffd23f%22 stroke-width=%225%22/%3E%3Cpath d=%22M32 12v28M18 26h28M20 40l6 10h12l6-10%22 stroke=%22%23ffd23f%22 stroke-width=%225%22 fill=%22none%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:ital,wght@1,700;0,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="menu">
+<div id="load">Model yuklanmoqda…</div>
+<canvas id="c"></canvas>
+<div id="vig"></div>
+<div id="touch" aria-hidden="true">
+  <div class="tcl" id="tsl">&#9664;</div>
+  <div class="tcl" id="tsr">&#9654;</div>
+  <div class="tcl" id="th">&#9995;</div>
+  <div class="tcl" id="tg">&#9650;</div>
+  <div class="tcl" id="tb">&#9660;</div>
+  <div class="tcl mini" id="tc">&#127909;</div>
+  <div class="tcl mini" id="tm">&#127937;</div>
+  <div class="tcl mini" id="tr">&#128260;</div>
+  <div class="tcl mini" id="tli">&#128161;</div>
+  <div class="tcl mini" id="tw">&#127782;</div>
+  <div class="tcl mini" id="tt">&#128338;</div>
+  <div class="tcl mini" id="tmn">&#9776;</div>
+</div>
+<div id="menu">
+  <div id="home" data-v="home" data-map="spa">
+    <div class="hm-top">
+      <div class="hm-brand">3D <b>Haydash</b></div>
+      <div class="hm-tools">
+        <button data-a="online">🌐 Onlayn <b id="onV">O’chiq</b></button>
+        <button data-a="gfx">Grafika <b id="gfxV">Avto</b></button>
+        <button data-a="controls">Boshqaruv</button>
+        <button data-a="missions">Missiya</button>
+        <button data-a="hard">Qiyin rejim <b id="hardV">O’chiq</b></button>
+        <button data-a="snd">Ovoz <b id="sndV">Yoniq</b></button>
+        <button data-a="fs" id="bFs" hidden>To’liq ekran <b id="fsV">O’chiq</b></button>
+      </div>
+    </div>
+    <div class="hm-center">
+      <div class="hm-resume" id="hmResume" hidden>
+        <button class="hm-go" data-a="play">Davom etish ▶</button>
+        <button class="hm-alt" data-a="new">Boshidan boshlash</button>
+      </div>
+      <div class="hm-cards">
+        <button class="hm-card map1" data-a="map" data-m="spa" aria-label="Spa-Francorchamps">
+          <div class="art"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24472f"/><stop offset="1" stop-color="#0b1812"/></linearGradient></defs><rect width="200" height="150" fill="url(#gA)"/><path d="M28 112C16 76 44 36 88 46S154 28 168 66 144 128 104 116 42 146 28 112Z" fill="none" stroke="#2a2d33" stroke-width="12" stroke-linejoin="round"/><path d="M28 112C16 76 44 36 88 46S154 28 168 66 144 128 104 116 42 146 28 112Z" fill="none" stroke="#ffd23f" stroke-width="2.4" stroke-dasharray="7 6" stroke-linejoin="round"/><rect x="82" y="40" width="4" height="12" fill="#fff"/></svg></div>
+          <div class="txt"><small>1-xarita</small><strong>Spa-Francorchamps</strong><span>Poyga trassasi · pit-stop · missiya</span></div>
+        </button>
+        <button class="hm-card map3" data-a="map" data-m="rain" aria-label="Mount Rainier">
+          <div class="art"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#27415c"/><stop offset="1" stop-color="#101a14"/></linearGradient></defs><rect width="200" height="150" fill="url(#gR)"/><path d="M0 120L62 50l22 24 30-52 86 98v10H0Z" fill="#1d2b25"/><path d="M114 22l-22 38 12-6 10 9 8-9 11 8Z" fill="#eef3f7"/><path d="M-6 150C40 120 70 130 100 112S160 92 210 80" fill="none" stroke="#ffd23f" stroke-width="5" stroke-linecap="round"/></svg></div>
+          <div class="txt"><small>3-xarita</small><strong>Mount Rainier</strong><span>Tog’ yo’li · devorlar · pit-stop</span></div>
+        </button>
+        
+      </div>
+    </div>
+    <button class="hm-garbtn" data-a="garage" aria-label="Garaj">🚗 Garaj</button>
+    <div class="hm-gar" id="hmGar">
+      <p>Rangini o’zgartirish uchun mashinani bosing</p>
+      <div class="garage-nav"><button data-a="prev" aria-label="Oldingi">‹</button><div class="slots" id="hmSlots"></div><button data-a="next" aria-label="Keyingi">›</button></div>
+      <button class="hm-back" data-a="gback">← Orqaga</button>
+    </div>
+    <div class="hm-tag" id="tag0"></div><div class="hm-tag" id="tag1"></div>
+  </div>
+  <section class="panel" id="pGarage" hidden aria-label="Garaj"></section>
+<section class="panel" id="pRecords" hidden aria-label="Missiya va rekordlar">
+    <h2>Missiya</h2><p class="tag">Vaqtga qarshi: 5 ta chekpunktni o'tab chiq</p>
+    <p class="recs" id="recList">-</p>
+    <p class="sel" style="margin-top:16px;">O'yinda <kbd>M</kbd> tugmasini bosib missiyani yoqasiz. Har bir chekpunkt uchun 25 sek vaqt qo'shiladi.</p>
+    <button class="back" data-a="close">Orqaga</button>
+  </section>
+  <section class="panel" id="pOnline" hidden aria-label="Onlayn">
+    <h2>Onlayn</h2><p class="tag">Do’stlar bilan bir trassada hayda (8 tagacha)</p>
+    <div id="oIdle">
+      <label for="oName">1. Ismingizni yozing</label>
+      <input id="oName" maxlength="14" autocomplete="off" placeholder="Masalan: Jasur">
+      <label>2. Xona yarating yoki do’stingiz kodi bilan qo’shiling</label>
+      <button class="obtn main" data-a="ohost">🏁 Xona yaratish</button>
+      <div class="orow"><input id="oCode" maxlength="4" autocomplete="off" placeholder="KOD" aria-label="Xona kodi"><button class="obtn" data-a="ojoin">Qo’shilish</button></div>
+    </div>
+    <div id="oRoom" hidden>
+      <label>Xona kodi — do’stlarga yuboring</label>
+      <span id="oRoomCode">----</span>
+      <p class="tag" id="oLink" style="text-align:center;margin:0 0 6px;word-break:break-all;"></p>
+      <button class="obtn" data-a="ocopy">📋 Havolani nusxalash</button>
+      <label>O’yinchilar</label>
+      <ul id="oList"></ul>
+      <button class="obtn main" id="oPlay" data-a="oplay">O’ynashni boshlash ▶</button>
+      <button class="obtn" data-a="oleave">Xonadan chiqish</button>
+    </div>
+    <p class="sel" id="oMsg" style="margin-top:16px;">Xona yarating yoki do’stingizning 4 belgili kodi bilan qo’shiling. Hamma bir xil trassada hayda qiladi.</p>
+    <button class="back" data-a="close">← Orqaga</button>
+  </section>
+  <section class="panel" id="pControls" hidden aria-label="Boshqaruv">
+    <h2>Boshqaruv</h2><p class="tag">O’yin davomida</p>
+    <div class="touchhelp"><b>◀ ▶</b> burilish<br><b>▲</b> gaz &nbsp;·&nbsp; <b>▼</b> tormoz / orqaga<br><b>✋</b> qo’l tormozi (drift)<br><b>🎥</b> kamera &nbsp;·&nbsp; <b>🏁</b> missiya &nbsp;·&nbsp; <b>💡</b> faralar<br><b>🔄</b> mashinani to’g’rilash<br><b>🌦</b> ob-havo &nbsp;·&nbsp; <b>🕒</b> kun / tun<br><b>☰</b> menyu<br><b>🌐</b> onlayn: <b>☰</b> → Onlayn</div>
+    <div class="ctl">
+      <span><kbd>W</kbd><kbd>S</kbd></span><span>Gaz / tormoz va orqaga</span>
+<span><kbd>M</kbd></span><span>Missiya: 5 ta chekpunkt rejimini yoqish / o'chirish</span>
+<span><kbd>T</kbd></span><span>Vaqt (kun va tun)ni o'tkazib yuborish</span>
+<span><kbd>Y</kbd></span><span>Ob-havo: ochiq, yomg'ir, tuman</span>
+      <span><kbd>A</kbd><kbd>D</kbd></span><span>Chapga / o’ngga burilish</span>
+      <span><kbd>Space</kbd></span><span>Qo’l tormozi (drift)</span>
+      <span><kbd>C</kbd></span><span>Kamerani almashtirish</span>
+      <span><kbd>O’ng tugma</kbd></span><span>Kamerani mashina atrofida erkin aylantirish (ushlab sudrang), g’ildirak — yaqin/uzoq</span>
+      <span><kbd>L</kbd></span><span>Faralar</span>
+      <span><kbd>R</kbd></span><span>Mashinani joyida to’g’rilash</span>
+      <span><kbd>Shift</kbd><kbd>R</kbd></span><span>Boshiga qaytarish + tuzatish</span>
+      <span><kbd>N</kbd></span><span>Ovozni yoqish / o’chirish</span>
+      <span><kbd>F</kbd></span><span>Qiyin rejim: yoqilg’i va shina yeyilishi</span>
+      <span><kbd>P</kbd></span><span>Pit-stop zonasi qayerdaligini ko’rsatish / yashirish</span>
+      <span><kbd>X</kbd></span><span>Pachoq testi (old / eshik / tom / orqa / kuchli)</span>
+      <span><kbd>K</kbd></span><span>4K sifat yoqish / o’chirish</span>
+      <span><kbd>O</kbd></span><span>Onlayn menyusi: xona yaratish / kod bilan qo’shilish</span>
+      <span><kbd>Esc</kbd></span><span>Menyuga qaytish</span>
+    </div>
+    <div class="ohelp"><h3>🌐 Onlayn o’ynash</h3>
+      <p><b>Xona ochish:</b> menyuda <b>🌐 Onlayn</b> → ismingizni yozing → <b>Xona yaratish</b>. Chiqqan 4 belgili kod yoki havolani do’stlarga yuboring, ular qo’shilgach <b>O’ynashni boshlash</b>ni bosing.</p>
+      <p><b>Qo’shilish:</b> <b>🌐 Onlayn</b> → ismingiz → do’stingiz kodi → <b>Qo’shilish</b> (havolani ochsangiz kod o’zi yoziladi). Qo’shilgach o’yin darhol boshlanadi.</p>
+      <p>O’yin vaqtida <kbd>O</kbd> (telefonda ☰) — onlayn menyusini ochadi. Do’stlaringiz bir xil trassada ko’rinadi, tepasida ismi va masofasi chiqadi. Xona egasi xaritani almashtirsa, hamma u bilan o’tadi. Xona egasi chiqib ketsa xona yopilishi mumkin.</p>
+    </div>
+    <button class="back" data-a="close">← Orqaga</button>
+  </section>
+</div>
+<div class="hud tl" id="keyhint">🎮 W/↑ gaz &nbsp;·&nbsp; S/↓ orqaga &nbsp;·&nbsp; A/D burilish<br>C — kamera &nbsp;·&nbsp; L — faralar &nbsp;·&nbsp; Space — qo’l tormozi &nbsp;·&nbsp; R — boshiga &nbsp;·&nbsp; K — 4K &nbsp;·&nbsp; O — onlayn &nbsp;·&nbsp; Esc — menyu</div>
+<div class="hud tl" id="envlbl">Ochiq - Kun</div>
+<div class="hud tl" id="sndlbl">🔊</div>
+<div id="mission" hidden><b id="mTitle">Missiya</b><span id="mInfo">-</span><div id="mArrow"></div></div>
+<div id="gauges" aria-hidden="true">
+  <div class="gg" id="gFuel"><span><u>⛽</u><em> Yoqilg’i</em> <b id="gFuelV">100%</b></span><i><u id="gFuelB"></u></i></div>
+  <div class="gg" id="gTire"><span><u>🛞</u><em> Shina</em> <b id="gTireV">100%</b></span><i><u id="gTireB"></u></i></div>
+  <div class="gg" id="gDmg"><span><u>🔧</u><em> Kuzov</em> <b id="gDmgV">100%</b></span><i><u id="gDmgB"></u></i></div>
+</div>
+<div class="hud tl" id="nethud"></div><div id="ntags"></div><div id="ntoast"></div>
+<div id="pitmsg" hidden><b id="pitT">PIT-STOP</b><span id="pitI">-</span><div id="pitbar"><u id="pitP"></u></div><div id="pitArrow"></div></div>
+<div class="hud bl" id="camlbl">📷 Kuzatuv</div>
+<div class="speed"><span id="spd">0</span><span>km/h</span></div>
+<div id="orient">📱 Yaxshiroq o’ynash uchun<br>telefonni yotqizing</div>
+<!-- Kutubxonalar: three → GLTFLoader → meshopt → pako → cannon-es (bitta fayl, shu tartibda) -->
+<script src="vendor.js"></script>
+<!-- Sozlama (server manzili) va yuklovchi: ma'lumot + o'yin fayllarini yig'adi -->
+<script src="config.js"></script>
+<script src="boot.js"></script>
+</body>
+</html>
